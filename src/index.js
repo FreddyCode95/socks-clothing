@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import { UserProvider } from "./contexts/User.context";
 import { CategoriesProvider } from "./contexts/Categories.context";
+
 import { CartProvider } from "./contexts/Cart.context";
 
 import './index.scss';
