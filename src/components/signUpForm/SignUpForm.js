@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import {createAuthUserWithEmailAndPassword, createUserDocumentFromAuth} from "../../utils/firebase/firebase.utils";
-import { UserContext } from "../../contexts/User.context";
 import {FormInput} from "../formInput/FormInput";
 import {Button} from "../button/Button";
 import './SignUpForm.scss';
@@ -32,7 +31,7 @@ export const SignUpForm = () => {
 
         try {
             const { user }  = await createAuthUserWithEmailAndPassword(email, password);
-            // every time a user signs up the user gets stored in userContext
+            // every time a user signs up the user gets stored in store/user redux
             await createUserDocumentFromAuth(user, { displayName });
             resetFormFields();
         } catch (error) {
