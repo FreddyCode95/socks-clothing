@@ -1,4 +1,4 @@
-// we can use redux-logger own middleware outcommed in store
+// we can use redux-logger our own middleware outcommed in store
 export const loggerMiddleware = (store)  => (next) => (action) => {
     if (!action.type) {
         return next(action);
