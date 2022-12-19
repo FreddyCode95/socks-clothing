@@ -1,15 +1,18 @@
 import './Button.scss';
 
-const BUTTON_TYPES_CLASSES = {
+export const BUTTON_TYPES_CLASSES = {
     google: 'google-sign-in',
     inverted: 'inverted',
+    payment: 'payment'
 }
-export const Button = ({ children, buttonType, ...otherProps }) => {
+export const Button = ({ children, buttonType, isLoading, ...otherProps }) => {
     return (
-        <button className={`button-container ${BUTTON_TYPES_CLASSES[buttonType]}`}
+        <button
+            disabled={isLoading}
+            className={`button-container ${BUTTON_TYPES_CLASSES[buttonType]}`}
             { ...otherProps }
         >
-            { children }
+            {isLoading ? <div className="loading-spinner"></div> : children }
         </button>
     )
 }
