@@ -9,6 +9,11 @@
     height: 60px;
     padding: 10px;
     margin-bottom: 20px;
+    // Makes sure nav sticks to top and z-index to make it overlay other components
+    z-index: 5;
+    background-color: #FFFFFF;
+    position: sticky;
+    top: 0;
   }
 
   .logo-container {

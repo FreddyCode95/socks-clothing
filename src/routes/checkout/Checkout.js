@@ -1,16 +1,28 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { selectCartItems, selectCartTotal } from "../../store/cart/cartSelector";
+import {selectCartItems, selectCartTotal, selectIsCartOpen} from "../../store/cart/cartSelector";
 
 import { CheckoutItem } from "../../components/checkoutItem/checkoutItem";
 
 import './Checkout.scss';
 import {PaymentForm} from "../../components/paymentForm/PaymentForm";
+import {setIsCartOpen} from "../../store/cart/cartActions";
 
 export const Checkout = () => {
     // const { cartItems, cartTotal } = useContext(CartContext);
+    const dispatch = useDispatch();
     const cartItems = useSelector(selectCartItems);
     const cartTotal = useSelector(selectCartTotal);
+    const isCartOpen = useSelector(selectIsCartOpen);
+
+    // console.log(isCartOpen)
+    // console.log("set",setIsCartOpen())
+
+    if (isCartOpen) {
+        dispatch(setIsCartOpen(!setIsCartOpen));
+    }
+    // dispatch(setIsCartOpen(isCartOpen));
+    // dispatch(setIsCartOpen(false));
 
     return (
 
