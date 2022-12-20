@@ -17,6 +17,11 @@
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 800px) {
+    min-width: unset;
+    padding: 0 40px;
+  }
+
   &:hover {
     background-color: white;
     color: black;

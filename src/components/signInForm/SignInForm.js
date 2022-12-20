@@ -7,7 +7,7 @@ import {
 } from "../../utils/firebase/firebase.utils";
 import {FormInput} from "../formInput/FormInput";
 import {Button} from "../button/Button";
-import './SignInForm.scss';
+import './SignInForm.scss'
 
 const defaultFormFields = {
     email: '',
@@ -54,7 +54,7 @@ export const SignInForm = () => {
     };
 
     return(
-        <div className="sign-up-container">
+        <div className="sign-in-container">
             <h2>Already have an account?</h2>
                 <span>Sign in with your email and password</span>
                 <span>test login test1@test1.dk - Password or sign in with google</span>

@@ -17,9 +17,15 @@
     }
   }
   .name,
-  .quantity,
+  .quantity {
+    width: 23%;
+  }
+
   .price {
     width: 23%;
+    @media screen and (max-width: 800px) {
+      width: 15%;
+    }
   }
 
   .quantity {
@@ -34,8 +40,11 @@
     }
   }
 
-  .remove-button {
+  .remove-item {
     padding-left: 12px;
     cursor: pointer;
+    @media screen and (max-width: 800px) {
+      width: 16%;
+    }
   }
 }

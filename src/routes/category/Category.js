@@ -7,6 +7,7 @@ import { Spinner } from "../../components/spinner/Spinner";
 import {selectCategoriesIsLoading, selectCategoriesMap} from "../../store/categories/categorySelector";
 
 import './Category.scss';
+import {Link} from "react-router-dom";
 
 export const Category = () => {
     const { category } = useParams();
@@ -20,16 +21,18 @@ export const Category = () => {
 
     return (
         <>
-        <h2 className='category-title'>{ category.toUpperCase() }</h2>
-            {isLoading
-                ? <Spinner />
-                : <div className="category-container">
-                    {products &&
-                        products.map((product) => (
-                            <ProductCard key={product.id} product={product} />
-                        ))}
-                </div>
-            }
+        <div className="category-mobile-container">
+            <h2 className='category-title'>{ category.toUpperCase() }</h2>
+                {isLoading
+                    ? <Spinner />
+                    : <div className="category-container">
+                        {products &&
+                            products.map((product) => (
+                                <ProductCard key={product.id} product={product} />
+                            ))}
+                    </div>
+                }
+        </div>
         </>
     )
 }

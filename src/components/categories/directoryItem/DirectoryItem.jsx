@@ -10,9 +10,7 @@ export const DirectoryItem = ({ category }) => {
             <div className='directory-item-container' onClick={onNavigateHandler}>
                 <div
                     className='background-image'
-                    style={{
-                        backgroundImage: `url(${imageUrl})`,
-                    }}
+                    style={{backgroundImage: `url(${imageUrl})`,}}
                 />
                 <div className='body'>
                     <h2>{title}</h2>
