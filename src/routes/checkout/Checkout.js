@@ -19,7 +19,12 @@ export const Checkout = () => {
     // closes cartDropDown going to Checkout page/routes
     useEffect(() => {
         dispatch(setIsCartOpen(!isCartOpen));
+        // dispatch({  // just demo for what is happening above on one line
+        //         type: ACTION.SET_IS_CART_OPEN,
+        //         payload: false
+        // });
     },[]);
+
 
     return (
 
