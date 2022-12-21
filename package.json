@@ -25,6 +25,7 @@
     "reselect": "^4.1.7",
     "sass": "^1.52.3",
     "stripe": "^11.4.0",
+    "sweetalert2": "^11.6.16",
     "toolkit": "^1.5.4",
     "web-vitals": "^2.1.4"
   },
