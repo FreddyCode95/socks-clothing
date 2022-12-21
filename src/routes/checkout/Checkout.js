@@ -1,12 +1,13 @@
+import {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {selectCartItems, selectCartTotal, selectIsCartOpen} from "../../store/cart/cartSelector";
+import {setIsCartOpen} from "../../store/cart/cartActions";
 
 import { CheckoutItem } from "../../components/checkoutItem/checkoutItem";
+import {PaymentForm} from "../../components/paymentForm/PaymentForm";
 
 import './Checkout.scss';
-import {PaymentForm} from "../../components/paymentForm/PaymentForm";
-import {setIsCartOpen} from "../../store/cart/cartActions";
 
 export const Checkout = () => {
     // const { cartItems, cartTotal } = useContext(CartContext);
@@ -15,14 +16,10 @@ export const Checkout = () => {
     const cartTotal = useSelector(selectCartTotal);
     const isCartOpen = useSelector(selectIsCartOpen);
 
-    // console.log(isCartOpen)
-    // console.log("set",setIsCartOpen())
-
-    if (isCartOpen) {
-        dispatch(setIsCartOpen(!setIsCartOpen));
-    }
-    // dispatch(setIsCartOpen(isCartOpen));
-    // dispatch(setIsCartOpen(false));
+    // closes cartDropDown going to Checkout page/routes
+    useEffect(() => {
+        dispatch(setIsCartOpen(!isCartOpen));
+    },[]);
 
     return (
 
